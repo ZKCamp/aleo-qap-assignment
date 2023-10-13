@@ -162,6 +162,6 @@ Since the above polynomial is equal to $H(x).Z(x)$ it should have roots at x = 1
 
 -   Complete the assignment
 
--   Create a pull request from your branch to the main branch of the repo to run the github workflow that verifies the solution
+-   Create a pull request from your branch to the main branch of the repo
 
 -   Since this assignment is manually evaluated we will provide feedback on your solution in form of pull request comments
