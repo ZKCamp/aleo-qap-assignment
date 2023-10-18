@@ -100,6 +100,7 @@ A(x) = \begin{bmatrix}
 ?x^3 + ?x^2 + ?x + ? \\ 
 ?x^3 + ?x^2 + ?x + ? \\ 
 ?x^3 + ?x^2 + ?x + ? \\
+?x^3 + ?x^2 + ?x + ? \\
 \end{bmatrix}
 $$
 
@@ -112,6 +113,7 @@ B(x) = \begin{bmatrix}
 ?x^3 + ?x^2 + ?x + ? \\ 
 ?x^3 + ?x^2 + ?x + ? \\ 
 ?x^3 + ?x^2 + ?x + ? \\
+?x^3 + ?x^2 + ?x + ? \\
 \end{bmatrix}
 $$
 
@@ -123,6 +125,7 @@ C(x) = \begin{bmatrix}
 \\ 
 ?x^3 + ?x^2 + ?x + ? \\ 
 ?x^3 + ?x^2 + ?x + ? \\ 
+?x^3 + ?x^2 + ?x + ? \\
 ?x^3 + ?x^2 + ?x + ? \\
 \end{bmatrix}
 $$
