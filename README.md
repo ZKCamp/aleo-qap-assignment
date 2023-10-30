@@ -8,55 +8,58 @@ $$
 
 ## Gates
 
-[Add the gates here]
+* $x * x = sym_1$
+* $x * -1 = sym_2$
+* $sym_1 + sym_2 = sym_3$
+* $-42 + sym_3 = out$
 
 ## Symbols
 
-symbols = [~one, x, ?, ?, ?, ?]
+symbols = $\vec{s} = [1, x, out, sym_1, sym_2, sym_3]$
 
 ## Solution Vector
 
-$\vec{s}$ = [1, 7, ?, ?, ?, ?]
+$\vec{s}$ = [1, 7, 0, 49, -7, 42]
 
 ## R1CS
 
 ### Gate #1
 
-$$ \vec{a} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{a} = [0, 1, 0, 0, 0, 0] $$
 
-$$ \vec{b} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{b} = [0, 1, 0, 0, 0, 0] $$
 
-$$ \vec{c} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{c} = [0, 0, 0, 1, 0, 0] $$
 
 Verify $$\vec{a}.\vec{s} * \vec{b}.\vec{s} - \vec{c}.\vec{s} == 0$$
 
 ### Gate #2
 
-$$ \vec{a} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{a} = [0, 1, 0, 0, 0, 0] $$
 
-$$ \vec{b} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{b} = [-1, 0, 0, 0, 0, 0] $$
 
-$$ \vec{c} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{c} = [0, 0, 0, 0, 1, 0] $$
 
 Verify $$\vec{a}.\vec{s} * \vec{b}.\vec{s} - \vec{c}.\vec{s} == 0$$
 
 ### Gate #3
 
-$$ \vec{a} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{a} = [1, 0, 0, 0, 0, 0] $$
 
-$$ \vec{b} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{b} = [0, 0, 0, 1, 1, 0] $$
 
-$$ \vec{c} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{c} = [0, 0, 0, 0, 0, 1] $$
 
 Verify $$\vec{a}.\vec{s} * \vec{b}.\vec{s} - \vec{c}.\vec{s} == 0$$
 
 ### Gate #4
 
-$$ \vec{a} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{a} = [1, 0, 0, 0, 0, 0] $$
 
-$$ \vec{b} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{b} = [-42, 0, 0, 0, 0, 1] $$
 
-$$ \vec{c} = [?, ?, ?, ?, ?, ?] $$
+$$ \vec{c} = [0, 0, 1, 0, 0, 0] $$
 
 Verify $$\vec{a}.\vec{s} * \vec{b}.\vec{s} - \vec{c}.\vec{s} == 0$$
 
@@ -64,28 +67,28 @@ Verify $$\vec{a}.\vec{s} * \vec{b}.\vec{s} - \vec{c}.\vec{s} == 0$$
 
 $$
 A = \begin{bmatrix}
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 & 0 & 0 \\
 \end{bmatrix}
 $$
 
 $$
 B = \begin{bmatrix}
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+-1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 1 & 0 \\
+-42 & 0 & 0 & 0 & 0 & 1 \\
 \end{bmatrix}
 $$
 
 $$
 C = \begin{bmatrix}
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
-? & ? & ? & ? & ? & ? \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
 \end{bmatrix}
 $$
 
@@ -93,78 +96,47 @@ $$
 
 $$
 A(x) = \begin{bmatrix}
-?x^3 + ?x^2 + ?x + ?
+\frac{-1}{3}x^3 + \frac{5}{2}x^2 - \frac{31}{6}x + 3
 \\
-?x^3 + ?x^2 + ?x + ?
+\frac{1}{3}x^3 - \frac{5}{2}x^2 + \frac{31}{6}x + -2
 \\ 
-?x^3 + ?x^2 + ?x + ? \\ 
-?x^3 + ?x^2 + ?x + ? \\ 
-?x^3 + ?x^2 + ?x + ? \\
-?x^3 + ?x^2 + ?x + ? \\
+0 \\ 
+0 \\ 
+0 \\
+0 \\
 \end{bmatrix}
 $$
 
 $$
 B(x) = \begin{bmatrix}
-?x^3 + ?x^2 + ?x + ?
+\frac{-15}{2}x^3 + 46x^2 - \frac{173}{2}x + 48
 \\
-?x^3 + ?x^2 + ?x + ?
+\frac{-1}{6}x^3 + \frac{3}{2}x^2 - \frac{13}{3}x + 4
 \\ 
-?x^3 + ?x^2 + ?x + ? \\ 
-?x^3 + ?x^2 + ?x + ? \\ 
-?x^3 + ?x^2 + ?x + ? \\
-?x^3 + ?x^2 + ?x + ? \\
+0 \\ 
+\frac{-1}{2}x^3 + \frac{7}{2}x^2 - 7x + 4 \\ 
+\frac{-1}{2}x^3 + \frac{7}{2}x^2 - 7x + 4 \\
+\frac{1}{6}x^3 - x^2 + \frac{11}{6}x - 1 \\
 \end{bmatrix}
 $$
 
 $$
 C(x) = \begin{bmatrix}
-?x^3 + ?x^2 + ?x + ?
+0
 \\
-?x^3 + ?x^2 + ?x + ?
+0
 \\ 
-?x^3 + ?x^2 + ?x + ? \\ 
-?x^3 + ?x^2 + ?x + ? \\ 
-?x^3 + ?x^2 + ?x + ? \\
-?x^3 + ?x^2 + ?x + ? \\
+\frac{1}{6}x^3 - x^2 + \frac{11}{6}x - 1 \\ 
+\frac{-1}{6}x^3 + \frac{3}{2}x^2 - \frac{13}{3}x + 4 \\ 
+\frac{1}{2}x^3 - 4x^2 + \frac{19}{2}x - 6 \\
+\frac{-1}{2}x^3 + \frac{7}{2}x^2 - 7x + 4 \\
 \end{bmatrix}
 $$
 
-$$A(x).\vec{s} = ?$$
-$$B(x).\vec{s} = ?$$
-$$C(x).\vec{s} = ?$$
+$$A(x).\vec{s} = 2x^3 - 15x^2 + 31x - 11 $$
+$$B(x).\vec{s} = \frac{-68}{3}x^3 + \frac{323}{2}x^2 - \frac{2003}{6}x + 202$$
+$$C(x).\vec{s} = \frac{-98}{3}x^3 + \frac{497}{2}x^2 - \frac{3437}{6}x + 406$$
 
-$$A(x).\vec{s} * B(x).\vec{s} - C(x).\vec{s} = ?$$
+$$A(x).\vec{s} * B(x).\vec{s} - C(x).\vec{s} = \frac{-136}{3}x^6 + 663x^5 - \frac{22757}{6}x^4 + 10700x^3 - \frac{92423}{6}x^2 + 10507x - 2628$$
 
 Since the above polynomial is equal to $H(x).Z(x)$ it should have roots at x = 1, 2, 3, 4. Verify the same by pasting the polynomial [here](https://www.wolframalpha.com/).
-
-## Evaluation
-
--   Clone this template repo, by clicking on `Use this template` and then selecting `Create a new repository`
-
--   Give a name to this repo and set visibility to `Private`
-
--   Add us as collaborators
-
-    * Go to the Settings tab
-    * Select Collaborators from the left pane
-    * Click Add People
-    * Add username `shubham-kanodia` as a collaborator
-
--   Clone the repo you just created
-
-    ```
-    git clone CLONE_URL
-    ```
-    
--   Create a new branch with your name. You can use the following command
-
-    ```
-    git checkout -b my-name
-    ```
-
--   Complete the assignment
-
--   Create a pull request from your branch to the main branch of the repo
-
--   Since this assignment is manually evaluated we will provide feedback on your solution in form of pull request comments
